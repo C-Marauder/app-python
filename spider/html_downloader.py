@@ -1,3 +1,4 @@
+import chardet
 import requests
 
 
@@ -5,7 +6,10 @@ class Downloader:
 
     def download(self, new_url):
         response = requests.get(new_url)
-        html = response.content
-        encode = response.encoding
-        return html, encode
+        if response.ok:
+            html = response.content
+            encode = chardet.detect(html)['encoding']
+            html = html.decode(encode,'ignore').encode('utf-8')
+            print(response.encoding+'---'+encode)
+            return html, encode
 
