@@ -36,11 +36,11 @@ class Spider:
 
                 if next_page_url is not None:
                     self.urlManager.add_new_url(next_page_url)
-
-
-
-
-if __name__ == "__main__":
-    root_url = 'http://www.27270.com/ent/meinvtupian/'
-
-    Spider().craw(root_url)
+#
+#
+#
+#
+# if __name__ == "__main__":
+#     root_url = 'http://www.27270.com/ent/meinvtupian/'
+#
+#     Spider().craw(root_url)
